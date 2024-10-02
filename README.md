@@ -1,6 +1,5 @@
-=======================================================
-# scrapextractjadwal.py
-=======================================================
+# Class Schedule Scraper & Organizer
+
 
 Description:
 This script automates the process of scraping class schedule data from the Gunadarma University website 
