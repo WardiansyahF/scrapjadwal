@@ -50,9 +50,9 @@ Note:
 - Make sure the ChromeDriver is compatible with your version of Chrome.
 - Modify the `kelas_per_tingkat` dictionary to adjust class names based on the actual classes offered at the university.
 
-=======================================================
 
-```
+### Import Library
+```python
 import pandas as pd
 from selenium import webdriver
 from selenium.webdriver.chrome.service import Service
@@ -60,13 +60,17 @@ from selenium.webdriver.common.by import By
 from selenium.webdriver.support.ui import WebDriverWait
 from selenium.webdriver.support import expected_conditions as EC
 from bs4 import BeautifulSoup
+```
 
-# Path to ChromeDriver
+### Path to ChromeDriver
+```python
 driver_path = r'C:\chromedriver-win64\chromedriver.exe'
 service = Service(driver_path)
 driver = webdriver.Chrome(service=service)
+```
 
-# List of classes to search
+### List of classes to search
+```python
 kelas_per_tingkat = {
     'Tingkat 1': [f'1IA{str(i).zfill(2)}' for i in range(1, 16)],
     'Tingkat 2': [f'2IA{str(i).zfill(2)}' for i in range(1, 19)],
@@ -75,8 +79,9 @@ kelas_per_tingkat = {
 }
 
 data_jadwal = []
-
-# Loop through each level and class
+```
+### Loop through each level and class
+```python
 for tingkat, kelas_list in kelas_per_tingkat.items():
     for kelas in kelas_list:
         url = 'https://baak.gunadarma.ac.id/jadwal/cariJadKul?_token=xculcm7MqI3CM9t2I3mPySFzHQ9kBjczuKMZFycb&filter=*.html'
@@ -129,13 +134,16 @@ for tingkat, kelas_list in kelas_per_tingkat.items():
         except Exception as e:
             print(f"An error occurred for {kelas}: {e}")
             print(driver.page_source)  # Print page for debugging
+```
 
-# Save the data to an Excel file
+### Save the data to an Excel file
+```python
 df = pd.DataFrame(data_jadwal)
 df.to_excel('jadwal_perkuliahan_tingkat.xlsx', index=False)  # Save to Excel file
 print("Data has been saved to jadwal_perkuliahan_tingkat.xlsx")
-
-# Close the driver
+```
+### Close the driver
+```python
 driver.quit()
 ```
 
