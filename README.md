@@ -1,4 +1,3 @@
-
 =======================================================
 scrapextractjadwal.py
 =======================================================
@@ -52,8 +51,8 @@ Note:
 - Modify the `kelas_per_tingkat` dictionary to adjust class names based on the actual classes offered at the university.
 
 =======================================================
-"""
 
+```
 import pandas as pd
 from selenium import webdriver
 from selenium.webdriver.chrome.service import Service
