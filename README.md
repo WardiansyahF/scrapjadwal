@@ -145,11 +145,3 @@ print("Data has been saved to jadwal_perkuliahan_tingkat.xlsx")
 ```python
 driver.quit()
 ```
-
-### Key Features of the Documentation:
-- **Header:** Clearly states the script name and description.
-- **Dependencies:** Lists necessary libraries and provides installation instructions.
-- **Usage Instructions:** Step-by-step guidance on how to run the script.
-- **Functionality:** Breaks down the script’s main features and processes.
-- **Error Handling:** Explains how the script manages errors during execution.
-- **Note:** Offers additional information regarding ChromeDriver compatibility and class name adjustments.
